@@ -6,7 +6,7 @@
 # File is written over itself each capture.
 
 # Save to remote host.
-raspistill -w 1920 -h 1090 -q 10 -o - | ssh user@domain.com "cat - > /var/www/html/image.jpg"
+raspistill -w 1920 -h 1080 -q 10 -o - | ssh user@domain.com "cat - > /var/www/html/image.jpg"
 
 # Save locally
 #today=`date +%Y-%m-%d-%H%M%S`

@@ -11,7 +11,7 @@
 thisminute=`date +%H%M`
 
 # Save to remote host.
-raspistill -w 1920 -h 1090 -q 10 -o - | ssh user@domain.com "cat - > /var/www/html/timelapse/image-$thisminute.jpg"
+raspistill -w 1920 -h 1080 -q 10 -o - | ssh user@domain.com "cat - > /var/www/html/timelapse/image-$thisminute.jpg"
 
 # Copy image
 ssh user@domain.com "cp /var/www/html/timelapse/image-$thisminute.jpg /var/www/html/image.jpg"
