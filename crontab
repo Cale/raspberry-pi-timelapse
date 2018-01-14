@@ -1,0 +1,16 @@
+# m h  dom mon dow   command
+
+# Capture still images for a timelapse between the hours of 6AM and 5PM.
+
+* 6-16 * * * /home/pi/camera-capture/capture-timelapse-image.sh 2>&1
+
+# Capture still images every five minutes between the hours of 5PM and 6AM.
+# cron only allows a range of hours to be used once, hence the listing of
+# individual hours, here.
+
+*/5 17,18,19,20,21,22,23,0,1,2,3,4,5 * * * /home/pi/camera-capture/capture-image.sh 2>&1
+
+# Compile a timelapse of images every day, one minute past 5PM. (Specified
+# via UTC time on remote server.)
+
+1 23 * * * /home/user/timelapse/make-timelapse.sh 2>&1
